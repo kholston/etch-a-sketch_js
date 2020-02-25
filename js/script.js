@@ -33,4 +33,13 @@ function createGrid(divAmount){
     }   
 }
 
+function clearGrid(){
+    let first = container.firstElementChild;
+    while (first){
+        first.remove();
+        first = container.firstElementChild;
+    }
+    
+}
+
 createGrid(numPerSide);
