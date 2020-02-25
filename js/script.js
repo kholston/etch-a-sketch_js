@@ -42,4 +42,18 @@ function clearGrid(){
     
 }
 
+function setGrid()
+{
+    let newSize = prompt("How many squares per side?");
+    if(isNaN(Number(newSize)))
+    {
+        alert("Please enter a valid number");
+        setGrid();
+    }
+    if(newSize == null) return;
+    
+    clearGrid();
+    createGrid(Math.floor(newSize));
+}
+
 createGrid(numPerSide);
