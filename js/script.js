@@ -42,18 +42,31 @@ function clearGrid(){
     
 }
 
+function checkNumber(number)
+{
+    if(isNaN(Number(number)) ||number == 0)
+    {
+        return false
+    }
+
+    return true;
+}
+
 function setGrid()
 {
-    let newSize = prompt("How many squares per side?");
-    if(isNaN(Number(newSize)))
-    {
-        alert("Please enter a valid number");
-        setGrid();
-    }
+    let newSize = prompt("How many squares per side (1 - 200)?");
     if(newSize == null) return;
-    
-    clearGrid();
-    createGrid(Math.floor(newSize));
+
+    if(checkNumber(newSize))
+    {
+        if(newSize > 200) newSize = 200;
+        clearGrid();
+        createGrid(Math.floor(newSize));
+    }
+    else{
+        alert("Please enter valid number.")
+        setGrid();
+    }    
 }
 
 createGrid(numPerSide);
