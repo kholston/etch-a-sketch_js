@@ -6,36 +6,31 @@ container = document.getElementById("container");
 // container.style.width = `${containerWidth}px`;
 
 function createGrid(divAmount){
-      
-    for(i = 0; i < divAmount; i++){
 
+    for(i = 0; i < divAmount; i++){
       divColumn = document.createElement("div");
       divColumn.setAttribute("id","column-" + `${i + 1}` );
       divColumn.setAttribute("flex-direction","column");  
         for(j = 0; j < divAmount; j++){
-            //Get container and create div element
-
-
-            divSquare = document.createElement("div");
+            //create div square
+            let divSquare;
+            divSquare = document.createElement("div"); 
             //Add an id and set div size
-            divSquare.setAttribute("id",`div ${i + 1} , ${j + 1}`);
-
+            divSquare.setAttribute("id",`square ${i + 1} , ${j + 1}`);
+            divSquare.style.transition = "all .25s";
+            //set divSquare size based on container 
             divSideSize = containerWidth / divAmount;
             divSquare.style.height = `${divSideSize}` + "px";
             divSquare.style.width =  `${divSideSize}` + "px";
-
+            //add square to current column
             divColumn.appendChild(divSquare);
+            divSquare.addEventListener("mouseover",function(){
+                document.getElementById(divSquare.id).classList.add("color");
+             });
         }
-        
-        
+
         container.appendChild(divColumn);
-    }
-
-    
-    
+    }   
 }
-
-
-
 
 createGrid(numPerSide);
