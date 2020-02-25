@@ -57,3 +57,6 @@ function setGrid()
 }
 
 createGrid(numPerSide);
+
+clearBtn = document.getElementById("clear-grid");
+clearBtn.addEventListener("click", setGrid);
