@@ -1,6 +1,7 @@
 
 let numPerSide = 16;
 let containerWidth = 960;
+let currentSize = 16;
 
 container = document.getElementById("container");
 // container.style.width = `${containerWidth}px`;
@@ -39,6 +40,7 @@ function clearGrid(){
         first.remove();
         first = container.firstElementChild;
     }
+    createGrid(currentSize);
     
 }
 
@@ -60,6 +62,7 @@ function setGrid()
     if(checkNumber(newSize))
     {
         if(newSize > 200) newSize = 200;
+        currentSize = newSize;
         clearGrid();
         createGrid(Math.floor(newSize));
     }
@@ -72,4 +75,7 @@ function setGrid()
 createGrid(numPerSide);
 
 clearBtn = document.getElementById("clear-grid");
-clearBtn.addEventListener("click", setGrid);
+clearBtn.addEventListener("click", clearGrid);
+
+changeBtn = document.getElementById("change-grid");
+changeBtn.addEventListener("click",setGrid);
