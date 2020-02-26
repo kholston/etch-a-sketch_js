@@ -3,7 +3,7 @@ let numPerSide = 16;
 let containerWidth = 960;
 let currentSize = 16;
 
-container = document.getElementById("container");
+container = document.getElementById("square-container");
 // container.style.width = `${containerWidth}px`;
 
 function createGrid(divAmount){
@@ -34,6 +34,7 @@ function createGrid(divAmount){
     }   
 }
 
+
 function clearGrid(){
     let first = container.firstElementChild;
     while (first){
@@ -56,12 +57,13 @@ function checkNumber(number)
 
 function setGrid()
 {
-    let newSize = prompt("How many squares per side (1 - 200)?");
+    let newSize = Number(prompt("How many squares per side (1 - 200)?"));
     if(newSize == null) return;
 
     if(checkNumber(newSize))
     {
         if(newSize > 200) newSize = 200;
+        console.log(newSize);
         currentSize = newSize;
         clearGrid();
         createGrid(Math.floor(newSize));
