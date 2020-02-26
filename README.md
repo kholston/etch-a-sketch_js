@@ -1,6 +1,6 @@
-#Etch-A-Sketch
+# Etch-A-Sketch
 
-##Purpose
+## Purpose
 This is a basic Etch-A-Sketch app written in javascript. It allows you draw, clear the canvas,
  and set the size of canvas in number of squares by number of squares.
 
