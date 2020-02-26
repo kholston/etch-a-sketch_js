@@ -40,9 +40,7 @@ function clearGrid(){
     while (first){
         first.remove();
         first = container.firstElementChild;
-    }
-    createGrid(currentSize);
-    
+    }  
 }
 
 function checkNumber(number)
@@ -63,7 +61,6 @@ function setGrid()
     if(checkNumber(newSize))
     {
         if(newSize > 200) newSize = 200;
-        console.log(newSize);
         currentSize = newSize;
         clearGrid();
         createGrid(Math.floor(newSize));
@@ -74,10 +71,16 @@ function setGrid()
     }    
 }
 
+function resetGrid()
+{
+    clearGrid()
+    createGrid(currentSize);
+}
+
 createGrid(numPerSide);
 
 clearBtn = document.getElementById("clear-grid");
-clearBtn.addEventListener("click", clearGrid);
+clearBtn.addEventListener("click", resetGrid);
 
 changeBtn = document.getElementById("change-grid");
 changeBtn.addEventListener("click",setGrid);
