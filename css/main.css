@@ -2,24 +2,35 @@
     display: flex;
     justify-content: center;
 }
+#info-box{
+    margin: 1em;
+    margin-right:3em;
+    height: 50%;
+    padding: 1em ;
+    border: .5em solid black;
+}
 
 #square-container{
 width: 960px;
 height: 960px;
 display: flex;
-justify-content: flex-start;
 border: .5em double black;
 padding: .25em;
+margin-right: auto;
 }
 
 .color{
 background-color: black;
-
 }
 
 
 body{
     text-align: center;
+}
+
+button{
+    padding: 2em;
+    margin: 2em;
 }
 
 
